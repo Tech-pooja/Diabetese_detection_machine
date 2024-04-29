@@ -9,10 +9,26 @@
       <div class="flex flex-col text-center w-full mb-12">
         <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Diabetes Detection System</h1>
         <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Enter Below Details To Predict....</p>
+        
+            {% if output%}
+
+            <h2>
+
+                Diabetes Result : {{output}}
+            </h2>
+            
+            {% endif %}
+        
       </div>
       <div class="lg:w-1/2 md:w-2/3 mx-auto">
         <div class="flex flex-wrap -m-2">
-            <form>
+
+
+
+     <form method ="post" action="/Prediction">
+
+        {% csrf_token %}
+
           <div class="p-2 w-1/9">
             <div class="relative">
               <label for="Pregnancies" class="leading-7 text-sm text-gray-600">Pregnancies</label>
